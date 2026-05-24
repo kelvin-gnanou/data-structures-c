@@ -1,12 +1,12 @@
 
-# 📚 Data Structures in C / C++
+# 📚 Structure de donnée en c
 
 [![Status](https://img.shields.io/badge/status-in%20development-orange)]()
 [![Language](https://img.shields.io/badge/language-C%20%7C%20C%2B%2B-blue)]()
 [![License](https://img.shields.io/badge/license-MIT-green)]()
 [![Focus](https://img.shields.io/badge/focus-data%20structures%20%26%20algorithms-purple)]()
 
-> Implémentation progressive de structures de données fondamentales en **C** et **C++**, avec une approche pédagogique, modulaire et orientée qualité logicielle.
+> Implémentation progressive de structures de données fondamentales en **C**, avec une approche pédagogique, modulaire et orientée qualité logicielle.
 
 ---
 
@@ -88,7 +88,7 @@ Fonctionnalités visées :
 ---
 
 
-## ▶️ How to Run
+## ▶️ Comment exécuter
 
 Chaque structure est indépendante:
 
@@ -137,46 +137,45 @@ data-struct.git/
         └── stack.c
 ```
 
-## 🛠️ Tech Stack
+## 🛠️ Technologies utilisées
 
-C · C++ · Makefile · GCC · Git
+C · Makefile · clang · Git
 
 ---
 
 ## ⚙️ Design Principles
 
-- Modular architecture
-- Separation of concerns
-- Manual memory management
-- Reusable components
+- Architecture modulaire
+- Séparation claire des responsabilités
+- Gestion explicite de la mémoire
+- Conception de composants réutilisables
 
 ---
 
-## 📌 What This Project Demonstrates
+## 📌 Que démontre ce projet
 
-- Implementation of core data structures from scratch
-- Understanding of pointers and memory handling
-- Modular C project organization
-- Clean and maintainable code structure
+- Développement des principales structures de données sans bibliothèques spécialisées
+- Compréhension approfondie des pointeurs et de la gestion mémoire
+- Conception modulaire d’applications en C
+- Production d’un code lisible, robuste et facile à maintenir
 
 ---
 
-## 🚀 Future Improvements
+## 🚀 Améliorations futures
 
-- Unit testing framework
-- Performance benchmarks
-- Enhanced error handling
-- Extended APIs for each structure
+- Mise en place d’un framework de tests unitaires
+- Réalisation de benchmarks de performance
+- Amélioration de la gestion des erreurs
+- Extension des API pour chaque structure de données
 
 ---
 
 ## 📈 Vision
 
-A foundation project evolving toward systems programming, backend engineering, and algorithmic mastery.
-
+Un projet fondamental destiné à évoluer vers la programmation système, l’ingénierie backend et la maîtrise approfondie des algorithmes.
 
 ---
 
-## 📄 License
+## 📄 Licence
 
-MIT License — free to use and modify.
+Licence MIT — libre d’utilisation, de modification et de distribution.
