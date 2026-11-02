@@ -17,15 +17,16 @@
 
 void test_binary_tree(void){
     BinaryTree tree = tree_create();
-
     ASSERT_TRUE(tree_size(tree) == 0 && "ERROR: new tree is not empty !");
     ASSERT_TRUE(tree_height(tree) == 0 && "ERROR: new tree height is not 0 !");
+
     ASSERT_TRUE(tree_insert(&tree, 5) && "ERROR: fail to insert 5 !");
     ASSERT_TRUE(tree_insert(&tree, 2) && "ERROR: fail to insert 2 !");
     ASSERT_TRUE(tree_insert(&tree, 8) && "ERROR: fail to insert 8 !");
     ASSERT_TRUE(tree_insert(&tree, 2) && "ERROR: duplicate insert failed !");
     ASSERT_TRUE(tree_size(tree) == 3 && "ERROR: tree size is not 3 !");
     ASSERT_TRUE(tree_height(tree) == 2 && "ERROR: tree height is not 2 !");
+
     ASSERT_TRUE(tree_contains(tree, 8) && "ERROR: value 8 is missing !");
     ASSERT_TRUE(!tree_contains(tree, 7) && "ERROR: value 7 should be missing !");
 

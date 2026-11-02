@@ -19,6 +19,7 @@ void test_graph(void){
     Graph *graph = graph_create(3, false);
     ASSERT_TRUE(graph != NULL && "ERROR: graph creation failed !");
     ASSERT_TRUE(graph_vertex_count(graph) == 3 && "ERROR: graph vertex count is not 3 !");
+    
     ASSERT_TRUE(graph_add_edge(graph, 0, 2) && "ERROR: fail to add edge 0-2 !");
     ASSERT_TRUE(!graph_add_edge(graph, 0, 3) && "ERROR: invalid vertex was accepted !");
 

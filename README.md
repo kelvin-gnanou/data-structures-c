@@ -1,181 +1,141 @@
-
-# 📚 Structure de donnée en c
+# Data Structures in C
 
 [![Status](https://img.shields.io/badge/status-in%20development-orange)]()
-[![Language](https://img.shields.io/badge/language-C%20%7C%20C%2B%2B-blue)]()
+[![Language](https://img.shields.io/badge/language-C%20-blue)]()
 [![License](https://img.shields.io/badge/license-MIT-green)]()
 [![Focus](https://img.shields.io/badge/focus-data%20structures%20%26%20algorithms-purple)]()
 
-> Implémentation progressive de structures de données fondamentales en **C**, avec une approche pédagogique, modulaire et orientée qualité logicielle.
+> Educational implementations of classic data structures in **C11**. This repository brings together public interfaces, implementations, an interactive demonstration program, and a test suite built with `make`.
 
----
+## Table of Contents
 
-## ✨ À propos du projet
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+- [Build and Run](#build-and-run)
+- [Tests](#tests)
+- [Data Structures and API](#data-structures-and-api)
+- [Repository Layout](#repository-layout)
+- [Contributing](#contributing)
+- [License](#license)
 
-Ce dépôt a été conçu pour construire une base technique solide autour des structures de données classiques.
+## Features
 
-L’objectif n’est pas seulement d’“implémenter du code”, mais de :
+The project currently includes:
 
-- comprendre le comportement interne des structures de données,
-- travailler le bas niveau avec rigueur,
-- renforcer la maîtrise de la mémoire, des pointeurs et de l’organisation modulaire,
-- produire du code lisible, maintenable et évolutif,
-- préparer des bases sérieuses pour des projets plus avancés en algorithmique, systèmes et IA.
+- a stack (LIFO);
+- a queue (FIFO);
+- a singly linked list;
+- a binary search tree of integers;
+- a graph represented by adjacency lists, supporting directed and undirected edges.
 
-Chaque structure est isolée dans son propre dossier avec :
-- ses fichiers d’en-tête,
-- ses sources,
-- son programme de démonstration,
-- son `Makefile`.
+Each data structure has a public header and a separate implementation, with dynamically managed memory. `src/main.c` provides a menu for running demonstrations. The test suite covers the main operations of each structure.
 
----
+## Prerequisites
 
-## 🧠 Objectifs pédagogiques
+- A C11-compatible compiler. The Makefile uses `clang` by default.
+- GNU Make.
 
-Ce projet sert à développer les réflexes suivants :
-
-- penser en termes de structure, pas seulement de syntaxe,
-- séparer proprement interface et implémentation,
-- écrire du code simple avant de le rendre plus avancé,
-- mesurer la complexité des opérations,
-- comprendre les compromis entre performance, lisibilité et maintenabilité,
-- adopter une logique d’ingénierie logicielle, pas juste de “code qui marche”.
-
----
-
-## 🧩 Structures disponibles
-
-### `basic_queue`
-
-Implémentation d’une file simple.
-
-Fonctionnalités visées :
-- insertion en file,
-- suppression en tête,
-- consultation de l’état de la file,
-- affichage de démonstration.
-
-### `stack`
-
-Implémentation d’une pile.
-
-Fonctionnalités visées :
-- empilement,
-- dépilement,
-- lecture du sommet,
-- vérification de vacuité.
-
-### `linked-list`
-
-Implémentation d’une liste chaînée.
-
-Fonctionnalités visées :
-- insertion,
-- suppression,
-- parcours,
-- manipulation de nœuds.
-
-### `binary-tree`
-
-Implémentation d’un arbre binaire.
-
-Fonctionnalités visées :
-- insertion,
-- parcours,
-- recherche,
-- base pour des améliorations futures : arbre de recherche, suppression avancée, équilibrage.
-
----
-
-
-## ▶️ Comment exécuter
-
-Chaque structure est indépendante:
+Check that they are available with:
 
 ```bash
-cd stack
-make
+clang --version
+make --version
+```
+
+To use another compiler, pass it to `make`, for example: `make CC=gcc test`.
+
+## Getting Started
+
+```bash
+git clone [https://github.com/kelvin-gnanou/data-structures-c.git](https://github.com/kelvin-gnanou/data-structures-c.git)
+cd data-structures-c
+```
+
+Replace `https://github.com/kelvin-gnanou/data-structures-c.git` with the repository URL. If you already have the project locally, change to its root directory.
+
+## Build and Run
+
+Build the main program:
+
+```bash
+make build
+```
+
+Run the interactive program:
+
+```bash
 make run
 ```
 
----
-
-## 🗂️ Structure du dépôt
+The menu lets you choose a demonstration: binary search tree, graph, linked list, queue, or stack. To build the program, run the tests, and then launch the program, use:
 
 ```bash
-data-struct.git/
-├── .gitignore
-├── LICENSE
-├── README.md
-├── basic_queue
-│   ├── include
-│   │   └── queue.h
-│   ├── makefile
-│   └── src
-│       ├── main.c
-│       └── queue.c
-├── binary-tree
-│   ├── include
-│   │   └── binary_tree.h
-│   ├── makefile
-│   └── src
-│       ├── binary_tree.c
-│       └── main.c
-├── linked-list
-│   ├── include
-│   │   └── list.h
-│   ├── makefile
-│   └── src
-│       ├── list.c
-│       └── main.c
-└── stack
-    ├── include
-    │   └── stack.h
-    ├── makefile
-    └── src
-        ├── main.c
-        └── stack.c
+make
 ```
 
-## 🛠️ Technologies utilisées
+The default build configuration is debug (`-g -O0`). To build an optimized release version:
 
-C · Makefile · clang · Git
+```bash
+make BUILD=release build
+```
 
----
+Generated files are placed in `build/`.
 
-## ⚙️ Design Principles
+## Tests
 
-- Architecture modulaire
-- Séparation claire des responsabilités
-- Gestion explicite de la mémoire
-- Conception de composants réutilisables
+From the repository root, build and run the complete test suite with:
 
----
+```bash
+make test
+```
 
-## 📌 Que démontre ce projet
+The tests use assertions from the C standard library. A failed assertion terminates the test program with a non-zero exit status. If all assertions pass, each module reports its result and the program exits successfully.
 
-- Développement des principales structures de données sans bibliothèques spécialisées
-- Compréhension approfondie des pointeurs et de la gestion mémoire
-- Conception modulaire d’applications en C
-- Production d’un code lisible, robuste et facile à maintenir
+To start from a clean build:
 
----
+```bash
+make clean
+make test
+```
 
-## 🚀 Améliorations futures
+## Data Structures and API
 
-- Mise en place d’un framework de tests unitaires
-- Réalisation de benchmarks de performance
-- Amélioration de la gestion des erreurs
-- Extension des API pour chaque structure de données
+Public declarations are in `include/`; implementations are in `src/`.
 
----
+| Data structure | Header | Main operations |
+|---|---|---|
+| Stack | `include/stack.h` | Create, push, pop, clear, get the size, and destroy |
+| Queue | `include/queue.h` | Create, enqueue, dequeue, clear, get the size, and destroy |
+| Singly linked list | `include/list.h` | Insert at either end, remove from either end or by value, clear, and destroy |
+| Binary search tree | `include/binary_tree.h` | Insert, search, get the size and height, traverse in order, and destroy |
+| Graph | `include/graph.h` | Create a directed or undirected graph, add an edge, get the vertex count, and destroy |
 
-## 📈 Vision
+Functions that may fail during allocation or modification return a Boolean where the API provides one. Destruction functions accept a pointer to the structure pointer and set it to `NULL` after freeing the structure.
 
-Un projet fondamental destiné à évoluer vers la programmation système, l’ingénierie backend et la maîtrise approfondie des algorithmes.
+## Repository Layout
 
----
+```text
+.
+├── include/        # Public data structure interfaces
+├── src/            # Implementations and demonstration program
+├── tests/          # Data structure tests
+├── Makefile        # Build, demonstration, tests, and cleanup
+├── LICENSE
+└── README.md
+```
 
-## 📄 Licence
+The Makefile creates `build/bin/main.exe` for the application and `build/bin/test.exe` for the test suite.
 
-Licence MIT — libre d’utilisation, de modification et de distribution.
+## Contributing
+
+Contributions are welcome. To propose a change:
+
+1. Create a dedicated branch.
+2. Make a focused change and add or update the relevant tests.
+3. Verify the change with `make clean && make test`.
+4. Open a pull request describing the problem and your solution.
+
+## License
+
+This project is distributed under the MIT License. See [LICENSE](LICENSE) for the full terms.

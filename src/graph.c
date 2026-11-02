@@ -25,8 +25,10 @@ struct Graph {
 /* Definitions */
 Graph *graph_create(size_t vertex_count, bool directed) {
     Graph *graph = calloc(1, sizeof(*graph));
-    if (!graph) return NULL;
-    if (vertex_count != 0) {
+    if (!graph) 
+        return NULL;
+
+    if (vertex_count) {
         graph->adjacency = calloc(vertex_count, sizeof(*(graph->adjacency)));
         if (!graph->adjacency) {
             free(graph);
@@ -35,6 +37,7 @@ Graph *graph_create(size_t vertex_count, bool directed) {
     }
     graph->vertex_count = vertex_count;
     graph->directed = directed;
+
     return graph;
 }
 
@@ -48,9 +51,11 @@ bool add_directed_edge(Graph *graph, size_t source, size_t destination) {
     Neighbor *node = malloc(sizeof(*node));
     if (!node) 
         return false;
+
     node->vertex = destination;
     node->next = graph->adjacency[source];
     graph->adjacency[source] = node;
+
     return true;
 }
 
@@ -78,7 +83,7 @@ bool graph_add_edge(Graph *graph, size_t source, size_t destination) {
 void graph_destroy(Graph **graph) {
     if (graph == NULL || *graph == NULL) return;
 
-    for (size_t i = 0; i < (*graph)->vertex_count; i++) {
+    for (size_t i = 0; i < (*graph)->vertex_count; ++i) {
         Neighbor *node = (*graph)->adjacency[i];
         while (node) {
             Neighbor *next = node->next;
@@ -99,7 +104,7 @@ void graph_print(const Graph *graph) {
         puts("(graphe nul)");
         return;
     }
-    for (size_t i = 0; i < graph->vertex_count; i++) {
+    for (size_t i = 0; i < graph->vertex_count; ++i) {
         printf("%zu :", i);
         for (
             const Neighbor *node = graph->adjacency[i]; 

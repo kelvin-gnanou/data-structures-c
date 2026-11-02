@@ -17,6 +17,7 @@
 
 void test_list(void){
     List *list = list_create();
+    
     ASSERT_TRUE(list != NULL && "ERROR: list creation failed !");
     ASSERT_TRUE(list_is_empty(list) && "ERROR: new list is not empty !");
 

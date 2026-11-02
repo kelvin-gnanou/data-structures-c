@@ -36,7 +36,7 @@ static void demo_tree(void) {
     const int values[] = {6, 9, 0, -4, 12};
     const size_t size = sizeof(values) / sizeof(values[0]);
 
-    for (size_t i = 0; i < size; i++){
+    for (size_t i = 0; i < size; ++i){
         if (!tree_insert(&tree, values[i])) {
             puts("Allocation de l'arbre impossible.");
         }
