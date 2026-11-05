@@ -48,11 +48,11 @@ To use another compiler, pass it to `make`, for example: `make CC=gcc test`.
 ## Getting Started
 
 ```bash
-git clone [https://github.com/kelvin-gnanou/data-structures-c.git](https://github.com/kelvin-gnanou/data-structures-c.git)
+git clone <repo>
 cd data-structures-c
 ```
 
-Replace `https://github.com/kelvin-gnanou/data-structures-c.git` with the repository URL. If you already have the project locally, change to its root directory.
+Replace <repo> with the repository URL [https://github.com/kelvin-gnanou/data-structures-c.git](https://github.com/kelvin-gnanou/data-structures-c.git). If you already have the project locally, change to its root directory.
 
 ## Build and Run
 
