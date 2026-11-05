@@ -52,7 +52,7 @@ git clone <repo>
 cd data-structures-c
 ```
 
-Replace <repo> with the repository URL [https://github.com/kelvin-gnanou/data-structures-c.git](https://github.com/kelvin-gnanou/data-structures-c.git). If you already have the project locally, change to its root directory.
+Replace `<repo>` with the repository URL [https://github.com/kelvin-gnanou/data-structures-c.git](https://github.com/kelvin-gnanou/data-structures-c.git). If you already have the project locally, change to its root directory.
 
 ## Build and Run
 
